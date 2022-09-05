@@ -10,6 +10,6 @@ class User {
 }
 
 // create instance
-const UserInstance = Reflect.construct(User, ['Adam', 10])
+const UserInstance: User = Reflect.construct(User, ['Adam', 10])
 // true for 'name' property
 const hasName = Reflect.has(UserInstance, 'name')
