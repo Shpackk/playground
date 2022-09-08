@@ -1,15 +1,13 @@
 import { Icalc } from "./interfaces/Icalc";
 
 export class Character {
-    private weight: number = 100;
-    private height: number = 190;
-    private sex: string = 'man';
-    public role: string;
     constructor(
         private calc: Icalc,
-        role: string
+        public role: string,
+        private weight: number = 190,
+        private height: number = 190,
+        private sex: string = 'man'
     ) {
-        this.role = role;
     }
 
     dumbCalculation(): number | void {
