@@ -2,13 +2,13 @@ import { Calc } from "./Calc";
 import { Character } from "./Character";
 
 class CharacterService {
+    constructor(private calc: Calc){}
     createChar() {
-        const icalc = new Calc()
-        const char = new Character(icalc, 'dumb dude')
+        const char = new Character(this.calc, 'dumb dude')
         const dumbResult = char.dumbCalculation()
         console.log(dumbResult)
     }
 }
-
-const character = new CharacterService()
+const calc = new Calc()
+const character = new CharacterService(calc)
 character.createChar()

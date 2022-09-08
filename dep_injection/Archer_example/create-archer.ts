@@ -2,12 +2,12 @@ import { Archer } from "./Archer";
 import { Fire } from "./Fire";
 
 class ArcherService {
+    constructor(private fire: Fire){}
     createAndShoot() {
-        const fire = new Fire()
-        const archer = new Archer(fire)
+        const archer = new Archer(this.fire)
         archer.action(10)
     }
 }
-
-const archerShootTen = new ArcherService()
+const fireService = new Fire()
+const archerShootTen = new ArcherService(fireService)
 archerShootTen.createAndShoot()
